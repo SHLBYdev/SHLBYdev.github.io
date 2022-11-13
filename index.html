@@ -262,6 +262,7 @@
                 </div>
             </div>
         </footer>
+
         <!-- Feedback Modal-->
         <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -271,14 +272,8 @@
                         <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body border-0 p-4">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" onsubmit='return postToGoogle();'>
+
+                        <form id="contact" onsubmit='return postToGoogle();'>
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" name= "entry.418241035" type="text" placeholder="Enter your name..." data-sb-validations="required" />
@@ -310,12 +305,9 @@
                                 <div class="text-center mb-3">
                                     <div class="fw-bolder">Form submission successful!</div>
                                     <br />
-                                    <a href="">https://startbootstrap.com/solution/contact-forms</a>
+                                    <a href="#!">https://startbootstrap.com/solution/contact-forms</a>
                                 </div>
                             </div>
-                            <!-- Submit error message-->
-                            <!-- This is what your users will see when there is an error submitting the form -->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
                             <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
                         </form>
@@ -338,9 +330,9 @@
 
   <script>
       function postToGoogle() {
-        var field1 = $("#Name").val();
-        var field2 = $("#Email").val();
-        var field3 = $("#Phone").val();
+        var field1 = $("#FullName").val();
+        var field2 = $("#EmailAddress").val();
+        var field3 = $("#PhoneNumber").val();
         var field4 = $("#Message").val();
 
         $.ajax({
