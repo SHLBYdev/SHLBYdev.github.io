@@ -7,17 +7,22 @@
         <meta name="author" content="" />
         <title>Shlby - Analytics & Development</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
         <!-- Google fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+
     <body id="page-top">
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
             <div class="container px-5">
@@ -273,53 +278,47 @@
                     </div>
                     <div class="modal-body border-0 p-4">
 
-                      <form id="contactForm" data-sb-form-api-token="API_TOKEN" onsubmit="return postToGoogle();">
-                          <!-- Name input-->
-                          <div class="form-floating mb-3">
-                              <input class="form-control" id="name" data-name="Name" name="entry.418241035" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                              <label for="name">Full name</label>
-                              <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                          </div>
-                          <!-- Email address input-->
-                          <div class="form-floating mb-3">
-                              <input class="form-control" id="email" data-name="Email" name="entry.1069290725" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                              <label for="email">Email address</label>
-                              <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                              <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                          </div>
-                          <!-- Phone number input-->
-                          <div class="form-floating mb-3">
-                              <input class="form-control" id="phone" data-name="Phone" name="entry.343379443" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                              <label for="phone">Phone number</label>
-                              <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                          </div>
-                          <!-- Message input-->
-                          <div class="form-floating mb-3">
-                              <textarea class="form-control" id="message" data-name="Message" name="entry.1000844538" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                              <label for="message">Message</label>
-                              <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                          </div>
-                          <!-- Submit success message-->
-                          <!---->
-                          <!-- This is what your users will see when the form-->
-                          <!-- has successfully submitted-->
-                          <div class="d-none" id="submitSuccessMessage">
-                              <div class="text-center mb-3">
-                                  <div class="fw-bolder">Form submission successful!</div>
-                                  <!-- To activate this form, sign up at -->
-                                  <br />
-                                  <a href="#">Thank you!</a>
-                              </div>
-                          </div>
-                          <!-- Submit error message-->
-                          <!---->
-                          <!-- This is what your users will see when there is-->
-                          <!-- an error submitting the form-->
-                          <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message, Please try again.</div></div>
+                            <form id="contactForm" onsubmit="return postToGoogle();">
+                              <fieldset>
+                                <input  placeholder="Your name"
+                                        type="text"
+                                        name="entry.418241035"
+                                        data-name="Name"
+                                        id="Name"
+                                        required>
+                              </fieldset>
+                              <fieldset>
+                                <input
+                                        placeholder="Your Email Address"
+                                        type="email"
+                                        name="entry.1069290725"
+                                        data-name="Email"
+                                        id="Email"
+                                        required>
+                              </fieldset>
+                              <fieldset>
+                                <input
+                                        placeholder="Your Phone Number"
+                                        type="tel"
+                                        name="entry.343379443"
+                                        data-name="Phone"
+                                        id="Phone"
+                                        required>
+                              </fieldset>
+                              <fieldset>
+                                <textarea
+                                        placeholder="Type your message here...."
+                                        data-name="Message"
+                                        id="Message"
+                                        name="entry.1000844538"
+                                        required>
+                                </textarea>
+                              </fieldset>
+                              <fieldset>
+                                <button type="submit" id="contact-submit">Submit</button>
+                              </fieldset>
+                            </form>
 
-                          <!-- Submit Button-->
-                          <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-                      </form>
                     </div>
                 </div>
             </div>
@@ -330,41 +329,37 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <script>
-      function postToGoogle() {
-        var field1 = $("#Name").val();
-        var field2 = $("#Email").val();
-        var field3 = $("#Phone").val();
-        var field4 = $("#Message").val();
+        <script>
+            function postToGoogle() {
+              var field1 = $("#Name").val();
+              var field2 = $("#Email").val();
+              var field3 = $("#Phone").val();
+              var field4 = $("#Message").val();
 
-        $.ajax({
-          url: "{https://docs.google.com/forms/u/1/d/e/1FAIpQLScBqzrxMu-sLoWkSFGCYbH5EAMpjUMdmfL2fCjmDlquZXtHug/formResponse}",
+              $.ajax({
+                url: "{https://docs.google.com/forms/u/1/d/e/1FAIpQLScBqzrxMu-sLoWkSFGCYbH5EAMpjUMdmfL2fCjmDlquZXtHug/formResponse}",
 
-          //add your google form generated numbers below which are also the 'names' of your inputs
-          data: {
-            "entry.418241035": field1,
-            "entry.1069290725": field2,
-            "entry.343379443": field3,
-            "entry.1000844538": field4
-          },
-          type: "POST",
-          dataType: "xml",
-          success: function (d) {
-            $('#contactForm').trigger('reset');
-          },
-          error: function (x, y, z) {
-            $('#contactForm').trigger('reset');
-          }
-        });
-        return false;
-      }
-    </script>
+                //add your google form generated numbers below which are also the 'names' of your inputs
+                data: {
+                  "entry.418241035": field1,
+                  "entry.1069290725": field2,
+                  "entry.343379443": field3,
+                  "entry.1000844538": field4
+                },
+                type: "POST",
+                dataType: "xml",
+                success: function (d) {
+                  $('#contactForm').trigger('reset');
+                },
+                error: function (x, y, z) {
+                  $('#contactForm').trigger('reset');
+                }
+              });
+              return false;
+            }
+          </script>
+
     </body>
 </html>
