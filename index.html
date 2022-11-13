@@ -273,23 +273,23 @@
                     </div>
                     <div class="modal-body border-0 p-4">
 
-                      <form id="contact" data-sb-form-api-token="API_TOKEN" onsubmit="return postToGoogle();">
+                      <form id="contactForm" data-sb-form-api-token="API_TOKEN" onsubmit="return postToGoogle();">
                           <!-- Name input-->
                           <div class="form-floating mb-3">
-                              <input class="form-control" id="name" data-name="FullName" name="entry.418241035" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                              <input class="form-control" id="name" data-name="Name" name="entry.418241035" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                               <label for="name">Full name</label>
                               <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                           </div>
                           <!-- Email address input-->
                           <div class="form-floating mb-3">
-                              <input class="form-control" id="email" data-name="EmailAddress" name="entry.1069290725" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                              <input class="form-control" id="email" data-name="Email" name="entry.1069290725" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
                               <label for="email">Email address</label>
                               <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                               <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                           </div>
                           <!-- Phone number input-->
                           <div class="form-floating mb-3">
-                              <input class="form-control" id="phone" data-name="PhoneNumber" name="entry.343379443" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                              <input class="form-control" id="phone" data-name="Phone" name="entry.343379443" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
                               <label for="phone">Phone number</label>
                               <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                           </div>
@@ -315,7 +315,8 @@
                           <!---->
                           <!-- This is what your users will see when there is-->
                           <!-- an error submitting the form-->
-                          <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                          <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message, Please try again.</div></div>
+
                           <!-- Submit Button-->
                           <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
                       </form>
@@ -338,9 +339,9 @@
 
   <script>
       function postToGoogle() {
-        var field1 = $("#FullName").val();
-        var field2 = $("#EmailAddress").val();
-        var field3 = $("#PhoneNumber").val();
+        var field1 = $("#Name").val();
+        var field2 = $("#Email").val();
+        var field3 = $("#Phone").val();
         var field4 = $("#Message").val();
 
         $.ajax({
@@ -356,10 +357,10 @@
           type: "POST",
           dataType: "xml",
           success: function (d) {
-            $('#contact').trigger('reset');
+            $('#contactForm').trigger('reset');
           },
           error: function (x, y, z) {
-            $('#contact').trigger('reset');
+            $('#contactForm').trigger('reset');
           }
         });
         return false;
