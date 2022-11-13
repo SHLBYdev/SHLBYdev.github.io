@@ -62,7 +62,11 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
+  --gradient-start-color: #0000ff;
+  --gradient-end-color: #FFD84F;;
+
 }
+
 
 *,
 *::before,
@@ -11296,7 +11300,7 @@ html {
 }
 
 .bg-gradient-primary-to-secondary {
-  background: linear-gradient(45deg, #2937f0, #9f1ae2) !important;
+  background: linear-gradient(45deg, var(--gradient-start-color), var(--gradient-end-color)) !important;
 }
 
 .font-alt {
@@ -11304,7 +11308,7 @@ html {
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(#2937f0, #9f1ae2);
+  background: -webkit-linear-gradient(var(--gradient-start-color), var(--gradient-end-color));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -11444,10 +11448,10 @@ section.cta:before {
   display: none;
 }
 .features-device-mockup .circle .gradient-start-color {
-  stop-color: #2937f0;
+  stop-color: var(--gradient-end-color);
 }
 .features-device-mockup .circle .gradient-end-color {
-  stop-color: #9f1ae2;
+  stop-color: var(--gradient-start-color);
 }
 .features-device-mockup .shape-1 {
   position: absolute;
@@ -11556,10 +11560,10 @@ footer a:hover, footer a:active, footer a:focus {
   display: none;
 }
 .masthead .masthead-device-mockup .circle .gradient-start-color {
-  stop-color: #2937f0;
+  stop-color: var(--gradient-end-color);
 }
 .masthead .masthead-device-mockup .circle .gradient-end-color {
-  stop-color: #9f1ae2;
+  stop-color: var(--gradient-start-color);
 }
 .masthead .masthead-device-mockup .shape-1 {
   position: absolute;
