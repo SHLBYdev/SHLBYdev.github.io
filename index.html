@@ -276,19 +276,23 @@
                         <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">Send feedback</h5>
                         <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
                     <div class="modal-body border-0 p-4">
 
-                            <form id="contactForm" onsubmit="return postToGoogle();">
+                            <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLScBqzrxMu-sLoWkSFGCYbH5EAMpjUMdmfL2fCjmDlquZXtHug/formResponse" method=POST id="contactForm" onsubmit="return postToGoogle();">
+
                               <fieldset>
-                                <input  placeholder="Your name"
+                                <input class="form-control"
+                                        placeholder="Your Name"
                                         type="text"
                                         name="entry.418241035"
                                         data-name="Name"
                                         id="Name"
                                         required>
                               </fieldset>
+                              <br>
                               <fieldset>
-                                <input
+                                <input class="form-control"
                                         placeholder="Your Email Address"
                                         type="email"
                                         name="entry.1069290725"
@@ -296,8 +300,9 @@
                                         id="Email"
                                         required>
                               </fieldset>
+                              <br>
                               <fieldset>
-                                <input
+                                <input class="form-control"
                                         placeholder="Your Phone Number"
                                         type="tel"
                                         name="entry.343379443"
@@ -305,21 +310,33 @@
                                         id="Phone"
                                         required>
                               </fieldset>
+                              <br>
                               <fieldset>
-                                <textarea
+                              <textarea class="form-control"
                                         placeholder="Type your message here...."
+                                        type='text'
                                         data-name="Message"
                                         id="Message"
                                         name="entry.1000844538"
                                         required>
-                                </textarea>
+                              </textarea>
                               </fieldset>
+                              <br>
                               <fieldset>
-                                <button type="submit" id="contact-submit">Submit</button>
+                                <button class="btn btn-primary rounded-pill btn-sm" type="submit" id="contact-submit">Submit</button>
                               </fieldset>
-                            </form>
 
+                              <div class="d-none" id="submitSuccessMessage">
+                                  <div class="text-center mb-3">
+                                      <div class="fw-bolder">Form submission successful!</div>
+                                      <br/>
+                                      <a href="#!">Thanks!</a>
+                                  </div>
+                              </div>
+
+                            </form>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -329,37 +346,7 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <script>
-            function postToGoogle() {
-              var field1 = $("#Name").val();
-              var field2 = $("#Email").val();
-              var field3 = $("#Phone").val();
-              var field4 = $("#Message").val();
-
-              $.ajax({
-                url: "{https://docs.google.com/forms/u/1/d/e/1FAIpQLScBqzrxMu-sLoWkSFGCYbH5EAMpjUMdmfL2fCjmDlquZXtHug/formResponse}",
-
-                //add your google form generated numbers below which are also the 'names' of your inputs
-                data: {
-                  "entry.418241035": field1,
-                  "entry.1069290725": field2,
-                  "entry.343379443": field3,
-                  "entry.1000844538": field4
-                },
-                type: "POST",
-                dataType: "xml",
-                success: function (d) {
-                  $('#contactForm').trigger('reset');
-                },
-                error: function (x, y, z) {
-                  $('#contactForm').trigger('reset');
-                }
-              });
-              return false;
-            }
-          </script>
 
     </body>
 </html>
