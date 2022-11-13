@@ -11300,7 +11300,7 @@ html {
 }
 
 .bg-gradient-primary-to-secondary {
-  background: linear-gradient(45deg, var(--gradient-start-color), var(--gradient-end-color)) !important;
+  background: linear-gradient(45deg, var(--gradient-start-color), var(--gradient-end-color))!important;
 }
 
 .font-alt {
@@ -11396,7 +11396,10 @@ section {
   left: 6.8870523416%;
   width: 86.2258953168%;
   height: 93.6288088643%;
-  background: linear-gradient(to right, purple, red);
+  background:
+    linear-gradient(to bottom, #FAC213, transparent),
+    url(https://grainy-gradients.vercel.app/noise.svg);
+  /* filter: contrast(145%) brightness(150%); */
 
 }
 
@@ -11425,7 +11428,11 @@ section {
   left: 2%;
   width: 197%;
   height: 75%;
-  background: linear-gradient(to bottom, purple, red);
+  background:
+  linear-gradient(to bottom, #FAC213, transparent),
+  url(https://grainy-gradients.vercel.app/noise.svg);
+/* filter: contrast(145%) brightness(150%); */
+
 }
 
 .device[data-device=iMac][data-orientation=landscape][data-color=black]::after {
