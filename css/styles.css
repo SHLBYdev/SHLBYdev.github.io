@@ -11357,7 +11357,12 @@ section {
  * Last Build: Tue Nov 14 2017 12:40:57
  */
 .device-wrapper {
-  max-width: 300px;
+  max-width: 100px;
+  width: 100%;
+}
+
+.device-wrapper_iMac {
+  max-width: 800px;
   width: 100%;
 }
 
@@ -11420,13 +11425,13 @@ section {
 
 /* iMac */
 .device[data-device=iMac][data-orientation=landscape][data-color=black] {
-  padding-bottom: 148%;
+  padding-bottom: 75%;
 }
 
 .device[data-device=iMac][data-orientation=landscape][data-color=black] .screen {
-  top: 1%;
-  left: 2%;
-  width: 197%;
+  top: 0%;
+  left: 0%;
+  width: 100%;
   height: 75%;
   background:
   linear-gradient(to bottom, #FAC213, transparent),
@@ -11437,8 +11442,10 @@ section {
 
 .device[data-device=iMac][data-orientation=landscape][data-color=black]::after {
   content: "";
-  width: 200%;
+  width: 100%;  /* default: 200% */
   background-image: url("../assets/img/iMac.png");
+  background-position: center;
+
 }
 
 .device[data-device=iMac][data-orientation=landscape][data-color=black] .button {
