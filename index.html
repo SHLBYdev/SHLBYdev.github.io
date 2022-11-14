@@ -278,8 +278,9 @@
                     </div>
 
                     <div class="modal-body border-0 p-4">
-
-                      <form id="contactForm" data-sb-form-api-token="API_TOKEN" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLScBqzrxMu-sLoWkSFGCYbH5EAMpjUMdmfL2fCjmDlquZXtHug/formResponse" method=POST onsubmit="return postToGoogle();">
+                      <script>type="text/javascript"> var submitted=false</script>
+                      <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" onload="if(submitted){window.location='sumbission.html';}"></iframe>
+                      <form id="contactForm" data-sb-form-api-token="API_TOKEN" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLScBqzrxMu-sLoWkSFGCYbH5EAMpjUMdmfL2fCjmDlquZXtHug/formResponse" method="post" target="hiddenConfirm" onsubmit="submitted=true">
                           <!-- Name input-->
                           <div class="form-floating mb-3">
                               <input class="form-control" id="name" name="entry.418241035" data-name="Name"type="text" placeholder="Enter your name..." data-sb-validations="required" />
